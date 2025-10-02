@@ -1,0 +1,9 @@
+--- a/configs/faster-rcnn_r50_fpn_1x_coco.py
++++ b/configs/freqfusion_faster_rcnn_r50_fpn_coco.py
+@@
+-custom_imports = dict(imports=[], allow_failed_imports=False)
++custom_imports = dict(imports=['src.freqfusion.freqfusion_module'], allow_failed_imports=False)
+@@
+-neck=dict(type='FPN', out_channels=256, num_outs=5),
++neck=dict(type='FPN', in_channels=[256,512,1024,2048], out_channels=256, num_outs=5,
++    fusion_cfg=dict(type='FreqFusion', low_pass=True, high_pass=True, offset=True)),
