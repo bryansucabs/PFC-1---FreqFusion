@@ -1,7 +1,7 @@
 
 # PFC-1 — Integración preliminar de fusión por frecuencia en Faster R-CNN (avance)
 
-**Estado:** avance técnico inicial. Se preparó estructura de proyecto, configuración mínima y un prototipo de módulo de fusión por frecuencia ("FreqFusion") para insertarlo tras FPN en un *pipeline* Two-Stage (Faster R-CNN). 
+**Estado:** avance inicial. Se preparó estructura de proyecto y avance preeliminar sobre los archivos que deberian cargarse. 
 
 ## Cómo ejecutar (avance simulado)
 ```bash
