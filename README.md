@@ -5,14 +5,7 @@
 
 ## Cómo ejecutar (avance simulado)
 ```bash
-# 1) crear entorno (opcional, ver environment.yml)
-# conda env create -f environment.yml && conda activate pfc
-
-# 2) entrenamiento simulado de 1 época (genera logs y métricas dummy)
-bash scripts/train_freqfusion.sh
-
-# 3) evaluación simulada (construye JSON de métricas dummy)
-bash scripts/eval_freqfusion.sh
+# 1) crear entorno 
 ```
 
 ## Estructura
