@@ -24,23 +24,27 @@ FILE_MAP = {
     Path("mmdetection/tools/dist_train.sh"): Path("tools/dist_train.sh"),
     Path("mmdetection/tools/test.py"): Path("tools/test.py"),
     Path("mmdetection/tools/dist_test.sh"): Path("tools/dist_test.sh"),
+
     Path("docs/templates/freqfusion_faster_rcnn_bundle_README.md"): Path("README.md"),
 }
 
 DIR_MAP = {
     Path("mmdetection/mmdet"): Path("mmdet"),
+
 }
 
 
 def export() -> None:
     if EXPORT_ROOT.exists():
         shutil.rmtree(EXPORT_ROOT)
+
     for src_dir, dst_dir in DIR_MAP.items():
         abs_src_dir = ROOT / src_dir
         if not abs_src_dir.exists():
             raise FileNotFoundError(f"No se encontró la carpeta esperada: {abs_src_dir}")
         abs_dst_dir = EXPORT_ROOT / dst_dir
         shutil.copytree(abs_src_dir, abs_dst_dir, dirs_exist_ok=True)
+
     for src, dst in FILE_MAP.items():
         abs_src = ROOT / src
         if not abs_src.exists():
@@ -49,8 +53,11 @@ def export() -> None:
         abs_dst.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(abs_src, abs_dst)
 
+
     total_items = len(FILE_MAP) + len(DIR_MAP)
     print(f"Copiados {total_items} elementos a {EXPORT_ROOT}")
+    print(f"Copiados {len(FILE_MAP)} archivos a {EXPORT_ROOT}")
+
 
 
 if __name__ == "__main__":

@@ -2,7 +2,11 @@
 
 Esta guía reúne los archivos de Python que intervienen directamente en la integración de **FreqFusion** dentro de **Faster R-CNN** sobre COCO y los enlaces entre ellos. Úsala como mapa para revisar o portar la implementación.
 
+
 > ✅ Encontrarás copias actualizadas de todos estos archivos dentro de la carpeta [`freqfusion_faster_rcnn_bundle/`](../freqfusion_faster_rcnn_bundle/), junto con **una copia completa del paquete `mmdet`**. Puedes quedarte únicamente con esa carpeta para trabajar con Faster R-CNN + FreqFusion.
+=======
+> ✅ Encontrarás copias actualizadas de todos estos archivos dentro de la carpeta [`freqfusion_faster_rcnn_bundle/`](../freqfusion_faster_rcnn_bundle/), lista para que puedas revisarlos o trasladarlos a otro proyecto sin depender de la estructura completa de este repositorio.
+
 
 ## Núcleo de FreqFusion
 
@@ -38,6 +42,7 @@ El archivo anterior extiende los siguientes archivos de la carpeta `_base_`, por
 
 ## Scripts de entrenamiento y evaluación
 
+
 ## Implementación de Faster R-CNN en MMDetection
 
 El detector de Faster R-CNN y sus componentes quedan empaquetados dentro de `freqfusion_faster_rcnn_bundle/mmdet/`. Los archivos más relevantes son:
@@ -54,6 +59,7 @@ El detector de Faster R-CNN y sus componentes quedan empaquetados dentro de `fre
 
 Al conservar la carpeta `freqfusion_faster_rcnn_bundle/` tendrás disponibles todas estas implementaciones sin depender del resto del repositorio.
 
+
 | Ruta | Descripción |
 | --- | --- |
 | `mmdetection/tools/train.py` | Punto de entrada para entrenar Faster R-CNN + FreqFusion en una GPU. |
@@ -69,4 +75,8 @@ Ejecuta el script [`tools/export_freqfusion_faster_rcnn.py`](../tools/export_fre
 python tools/export_freqfusion_faster_rcnn.py
 ```
 
+
 > Nota: El paquete incluye el código completo de MMDetection v2.28.1 adaptado con FreqFusion. Únicamente necesitas instalar las dependencias de Python (MMCV, MMEngine, etc.) para ejecutarlo.
+
+> Nota: La carpeta resultante no sustituye a MMDetection; solo agrupa los archivos clave. Para ejecutar Faster R-CNN + FreqFusion sigues necesitando las dependencias del framework original.
+
